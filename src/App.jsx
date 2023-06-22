@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route,Routes}from 'react-router-dom'
+import {Route,Routes,Navigate}from 'react-router-dom'
 import Login from './Pages/Login'
 import Home from './Pages/Home'
 import Products from './Pages/Products'
@@ -10,34 +10,31 @@ import Navigationbar from './Components/Navigationbar'
 import Footer from './Components/Footer'
 import './app.css';
 
+
 export default function App() {
 
-  // const [user,setUser] = useState(true)
+   const [user,setUser] = useState(true)
   return (
     <>
       <Navigationbar />
-
-          {/* // this block will be triggered if user has logedIn */}
-          <Routes>
+      {
+        user 
+        ? 
+        (          
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Products" element={<Products />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/Categories" element={<Categories />} />
           <Route path="*" element={<Page404 />} />
-        </Routes>
-        {/* )
+        </Routes>)
         :
-        (
-          // this block will be triggered if the user has not logedIn
-          <Routes>
+        (          
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/SignUp" element={<SignUp />} />
-          <Route path="*" element={<Login />} />
-        </Routes>
-        )
-      } */}
+          <Route path="*" element={<Navigate to="/login" replace={true} />} />
+        </Routes>)
+      }
 
     
     
