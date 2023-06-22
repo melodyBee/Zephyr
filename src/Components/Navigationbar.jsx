@@ -5,18 +5,19 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+
 function Navigationbar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#home">Zephyr</Navbar.Brand>
+        <Link className='brand-font navbar-brand' to="#home">Zephyr</Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
             <Link className='nav-link' to='/'>Home</Link>
             <Link className='nav-link' to="/Products">Products</Link>
             <Link className='nav-link' to="/login">Login</Link>
-            <Link className='btn btn-dark' to="SignUp">SignUp</Link>
+            <Link className='btn btn-' to="SignUp">SignUp</Link>
             <Link className='nav-link' to="/Categories"></Link>
             <Link className='nav-link' to=""></Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">

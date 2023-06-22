@@ -8,6 +8,8 @@ import Categories from './Pages/Categories'
 import Page404 from './Pages/Page404'
 import Navigationbar from './Components/Navigationbar'
 import Footer from './Components/Footer'
+import './app.css';
+
 export default function App() {
 
   // const [user,setUser] = useState(true)
