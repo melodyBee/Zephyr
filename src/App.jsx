@@ -16,7 +16,7 @@ export default function App() {
   const [user, setUser] = useState(true)
   return (
     <>
-
+  
       <NavigationBar />
 
       {
@@ -26,7 +26,7 @@ export default function App() {
           (
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
+              <Route path="/Products" element={<Products />} />
               <Route path="*" element={<Page404 />} />
             </Routes>
           )
