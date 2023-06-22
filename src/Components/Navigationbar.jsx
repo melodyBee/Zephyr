@@ -17,10 +17,7 @@ function Navigationbar() {
             <Link className='nav-link' to='/'>Home</Link>
             <Link className='nav-link' to="/Products">Products</Link>
             <Link className='nav-link' to="/login">Login</Link>
-            <Link className='btn btn-' to="SignUp">SignUp</Link>
-            <Link className='nav-link' to="/Categories"></Link>
-            <Link className='nav-link' to=""></Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown title="Categories" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -30,7 +27,8 @@ function Navigationbar() {
               <NavDropdown.Item href="#action/3.4">
                 Separated link
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown>           
+            <Link className='btn btn-light' to="SignUp">SignUp</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
