@@ -7,19 +7,15 @@ import SignUp from './Pages/SignUp'
 import Categories from './Pages/Categories'
 import Page404 from './Pages/Page404'
 import Navigationbar from './Components/Navigationbar'
-
+import Footer from './Components/Footer'
 export default function App() {
 
-  const [user,setUser] = useState(true)
+  // const [user,setUser] = useState(true)
   return (
     <>
       <Navigationbar />
 
-      {
-        user
-        ?
-        (
-          // this block will be triggered if user has logedIn
+          {/* // this block will be triggered if user has logedIn */}
           <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Products" element={<Products />} />
@@ -28,7 +24,7 @@ export default function App() {
           <Route path="/Categories" element={<Categories />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
-        )
+        {/* )
         :
         (
           // this block will be triggered if the user has not logedIn
@@ -39,7 +35,7 @@ export default function App() {
           <Route path="*" element={<Login />} />
         </Routes>
         )
-      }
+      } */}
 
     
     
