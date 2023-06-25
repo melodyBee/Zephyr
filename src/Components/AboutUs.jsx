@@ -1,22 +1,18 @@
 import React from "react";
-import aboutUsImage from "../assets/AboutUs.svg";
+import image from "../assets/AboutUs.svg";
 
 export default function AboutUs() {
   return (
     <>
-      <section className="buffer ">
-        <div className="Outerportion py-5 px-0">
+      <section className="buffer">
+        <div className="Outerportion px-2 py-10">
           <div className="aboutus d-flex flex-wrap">
-            <div className="image flex-grow-2 flex-shrink-1 flex-basis-20 mr-3">
-              <img
-                className="img-fluid px-2 "
-                src={aboutUsImage}
-                alt="Description of the image"
-              />
+            <div className="image flex-grow-1 flex-shrink-1 flex-basis-50 mr-3">
+              <img className="img img-fluid" src={image} alt="team image" />
             </div>
-            <div className="contents flex-grow-1 flex-shrink-1 flex-basis-80">
-              <h1 className="font-size-36 ">About Us</h1>
-              <p className="font-size-18">
+            <div className="contents flex-grow-1 flex-shrink-1 flex-basis-50">
+              <h1 className="font-size-36 mb-4 brand-font">About Us</h1>
+              <p className="font-size-18 mb-0">
                 We are a team of passionate people dedicated to providing the
                 best service to our clients. Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit. Sed et est vel quam molestie
