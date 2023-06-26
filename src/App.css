@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caprasimo&display=swap');
 
-  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-
+.fun-font{
+  font-family: 'Caprasimo', cursive;;
+}
 .brand-font {
     font-family: 'Abril Fatface', cursive;
   }
@@ -17,7 +19,7 @@ body {
 
 .parallax-container {
   display: flex;
-  min-height: 100vh;
+  min-height: 80vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -30,7 +32,13 @@ body {
 
   text-align: center;
 }
-
+#category-line{
+  background-color: #000;
+  min-height:12vh;
+}
+.parallax-container p{
+  font-size:x-large;
+}
 .buffer {
   width: 100%;
   min-height: 60vh;
