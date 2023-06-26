@@ -5,12 +5,12 @@ export default function AboutUs() {
   return (
     <>
       <section className="buffer">
-        <div className="Outerportion px-2 py-10">
-          <div className="aboutus d-flex flex-wrap">
-            <div className="image flex-grow-1 flex-shrink-1 flex-basis-50 mr-3">
-              <img className="img img-fluid" src={image} alt="team image" />
+        <div className="Outerportion py-5 container">
+          <div className="aboutus row align-items-start">
+            <div className="image col mr-3">
+              <img className="img-fluid" src={image} alt="team image" />
             </div>
-            <div className="contents flex-grow-1 flex-shrink-1 flex-basis-50">
+            <div className="contents col">
               <h1 className="font-size-36 mb-4 brand-font">About Us</h1>
               <p className="font-size-18 mb-0">
                 We are a team of passionate people dedicated to providing the

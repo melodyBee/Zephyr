@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <>
       <footer
-        className="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary"
+        className="bd-footer py-4 py-md-5 bg-body-tertiary"
         bg="dark"
         data-bs-theme="dark"
       >
