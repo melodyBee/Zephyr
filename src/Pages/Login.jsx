@@ -20,7 +20,7 @@ function Login() {
 
   return (
     <div className="login template d-flex justify-content-center align-items-center p-5">
-      <div className="p-5 rounded" style={{ width: '400px' }}> {/* Inline CSS for width */}
+      <div className="p-5 rounded" style={{ width: '400px' }}> 
         <form onSubmit={handleSubmit}>
           <h3 style={{ color: '#001A33' }}>LOGIN IN</h3>
           <div className="mb-3">
