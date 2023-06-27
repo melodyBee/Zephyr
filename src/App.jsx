@@ -8,7 +8,7 @@ import Signup from "./Pages/Signup";
 import Page404 from "./Pages/Page404";
 import NavigationBar from "./Components/Navigationbar";
 import Footer from "./Components/Footer";
-import ProductPage from "./Pages/Products";
+import ProductPage from "./Pages/ProductPage";
 import AboutUs from "./Components/AboutUs";
 
 export default function App() {
