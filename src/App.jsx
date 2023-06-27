@@ -12,7 +12,7 @@ import ProductPage from "./Pages/ProductPage";
 import AboutUs from "./Components/AboutUs";
 
 export default function App() {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
   return (
     <>
       <NavigationBar />

@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Categories from "./Categories";
+import { Button } from "react-bootstrap";
+
 function Navigationbar() {
   return (
     <Navbar sticky="top" bg="dark" data-bs-theme="dark" expand="lg">
@@ -13,14 +17,19 @@ function Navigationbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
+            <Button className="btn btn-dark" id="categories-dropdown">
+              Categories
+            </Button>
+            {/* <div className="dropdown">
+                <span class="hover">
+                  <Categories />
+                </span>
+              </div> */}
             <Link className="nav-link" to="/">
               Home
             </Link>
             <Link className="nav-link" to="/Products">
               Products
-            </Link>
-            <Link className="nav-link" to="">
-              Categories
             </Link>
             <Link className="nav-link" to="/login">
               Login

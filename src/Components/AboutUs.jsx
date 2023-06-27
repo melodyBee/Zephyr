@@ -1,5 +1,4 @@
 import React from "react";
-import image from "../assets/AboutUs.svg";
 
 export default function AboutUs() {
   return (
@@ -7,10 +6,8 @@ export default function AboutUs() {
       <section className="buffer">
         <div className="Outerportion py-5 container">
           <div className="aboutus row align-items-start">
-            <div className="image col mr-3">
-              <img className="img-fluid" src={image} alt="team image" />
-            </div>
-            <div className="contents col">
+            <div className="image imagecontainer col-6 mr-3"></div>
+            <div className="contents col-6">
               <h1 className="font-size-36 mb-4 brand-font">About Us</h1>
               <p className="font-size-18 mb-0">
                 We are a team of passionate people dedicated to providing the
