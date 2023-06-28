@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Aboutus from "./AboutUs";
 import Categories from "./Categories";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function Parallax() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      easing: "ease", // Animation easing
+      once: false, // Only animate elements once
+    });
+  }, []);
   return (
     <>
       <section className="parallax-container">
@@ -10,17 +19,25 @@ export default function Parallax() {
           Where your shopping desires meet limitless possibilities.
         </p>
       </section>
-      <div id="category-line"></div>
       <Aboutus />
-      <section className="d-flex justify-content-center" id="why?">
-        <h1>Why Zephyr is helpful?</h1>
+      <section
+        className="d-flex justify-content-center"
+        id="why?"
+        data-aos="fade-up"
+      >
+        <h1 className="brand-font">Why Zephyr is helpful?</h1>
       </section>
       <section className="buffer">
         <div className="Outerportion py-5 container">
           <div className="row align-items-start">
             <div className="contents col-6">
-              <h1 className="font-size-36 mb-4 brand-font">Convienience</h1>
-              <p className="font-size-18 mb-0">
+              <h1
+                className="font-size-36 mb-4 brand-font"
+                data-aos="fade-right"
+              >
+                Convienience
+              </h1>
+              <p className="font-size-18 mb-0" data-aos="fade-right">
                 1. Shop anytime, anywhere, 24/7. <br />
                 2. Hassle-free online shopping experience.
                 <br />
@@ -37,6 +54,7 @@ export default function Parallax() {
       <section className="buffer">
         <div className="Outerportion py-5 container">
           <div className="row align-items-start">
+            <div className="image imagecontainer-3 col-6 mr-3"></div>
             <div className="contents col-6">
               <h1 className="font-size-36 mb-4 brand-font">
                 Extensive Product Selection:
@@ -85,6 +103,7 @@ export default function Parallax() {
       <section className="buffer">
         <div className="Outerportion py-5 container">
           <div className="row align-items-start">
+            <div className="image imagecontainer-5 col-6 mr-3"></div>
             <div className="contents col-6">
               <h1 className="font-size-36 mb-4 brand-font">
                 Customer Reviews and Ratings:

@@ -17,16 +17,11 @@ function Navigationbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Button className="btn btn-dark" id="categories-dropdown">
-              Categories
-            </Button>
-            {/* <div className="dropdown">
-                <span class="hover">
-                  <Categories />
-                </span>
-              </div> */}
             <Link className="nav-link" to="/">
               Home
+            </Link>
+            <Link className="nav-link" to="/Categories">
+              Categories
             </Link>
             <Link className="nav-link" to="/Products">
               Products

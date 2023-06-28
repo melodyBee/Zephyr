@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caprasimo&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caprasimo&family=Great+Vibes&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 .brand-font {
     font-family: 'Abril Fatface', cursive;
   }
@@ -15,7 +14,7 @@ body {
 
 .parallax-container {
   display: flex;
-  min-height: 80vh;
+  min-height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -74,15 +73,6 @@ height:auto;
 #categories-dropdown{
   width:90%
 }
-.image{
-  background-attachment: fixed;
-  background-size: cover;
-  min-height: 60vh;
-
-}
-.imagecontainer{
-  background-image: url(./assets/aboutus.svg);
-}
-.imagecontainer-2{
- background-image: url(./assets/undraw_relaxing_at_home_re_mror.svg);
+.contents{
+  font-family: 'Roboto Condensed', sans-serif;
 }
