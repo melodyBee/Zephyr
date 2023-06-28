@@ -13,22 +13,14 @@ export default function ImageSection({ images }) {
         <img src={img} alt="" className="img-fluid mb-5" />
       </div>
 
-      <div className="d-flex align-items-center gap-3 bg-light border border-dark p-5 rounded mb-5">
+      <div className="d-flex align-items-center gap-2 bg-light border border-dark p-2 rounded mb-5">
         {images?.map((val, key) => (
           <div
-            className={
-              img == images[key]
-                ? "border border-dark rounded-circle p-2"
-                : null
-            }
+            className={img == images[key] ? "border border-dark  p-2" : null}
             onClick={() => changeImage(key)}
             key={key}
           >
-            <img
-              className=" rounded-circle img-fluid "
-              src={val}
-              alt={`img-${key}`}
-            />
+            <img className="img-fluid " src={val} alt={`img-${key}`} />
           </div>
         ))}
       </div>

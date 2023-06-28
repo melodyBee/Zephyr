@@ -60,14 +60,74 @@ export default function ProductPage() {
 
   return (
     <>
-      <div className="container">
+      <div className="container mt-5">
         <div className="row">
-          <div className="col-6"></div>
-          <div className="col-6"></div>
+          <div className="col-6">
+            <ImageSection images={product.images} />
+          </div>
+          <div className="col-6">
+            <h1>{product.title} -</h1>
+            <h5>{product.price}$</h5>
+            <p className="text-secondary">{product.description}</p>
+            <ReactStars
+              className=""
+              count={5}
+              size={25}
+              edit={false}
+              value={product.rating}
+              color2={"#ffd700"}
+            />
+            <button
+              className="btn btn-dark mx-3"
+              disabled={productQuantity > 1 ? false : true}
+              onClick={() => setproductQuantity(productQuantity - 1)}
+            >
+              -
+            </button>
+            {productQuantity}
+            <button
+              className="btn btn-dark mx-3"
+              onClick={() => setproductQuantity(productQuantity + 1)}
+            >
+              +
+            </button>
+            <button className="btn btn-dark" onClick={addToCart}>
+              Add to Cart
+            </button>
+          </div>
         </div>
         <div className="row">
-          <div className="col-6"></div>
-          <div className="col-6"></div>
+          <h2 className="">Reviews Us</h2>
+          <div className="col-6">
+            {" "}
+            <div className="form-floating">
+              <textarea
+                className="form-control"
+                placeholder="Leave a comment here"
+                id="floatingTextarea2"
+                style={{ height: 100 }}
+                defaultValue={review}
+                onChange={(e) => setReview(e.target.value)}
+              />
+              <label htmlFor="floatingTextarea2">Comments</label>
+            </div>
+            <button className="my-3 btn btn-dark" onClick={submitReview}>
+              Submit review
+            </button>
+          </div>
+          <div className="col-6">
+            {" "}
+            <div className="d-flex align-items-center">
+              <ReactStars
+                count={5}
+                size={24}
+                value={ratingstar}
+                onChange={ratingChanged}
+                color2={"#ffd700"}
+              />
+              <span className="ms-3">({ratingstar})</span>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -20,7 +20,7 @@ export default function CategoryPage() {
       </div>
       <div className="row ">
         {products.map((val, key) => (
-          <div className="col-md-4 my-4" key={key}>
+          <div className="col-md-3 my-4" key={key}>
             <Link className="text-decoration-none" to={`/products/${val.id}`}>
               <Card>
                 <Card.Img variant="top" src={val.thumbnail} />

@@ -56,10 +56,10 @@ export default function Parallax() {
           <div className="row align-items-start">
             <div className="image imagecontainer-3 col-6 mr-3"></div>
             <div className="contents col-6">
-              <h1 className="font-size-36 mb-4 brand-font">
+              <h1 className="font-size-36 mb-4 brand-font" data-aos="fade-left">
                 Extensive Product Selection:
               </h1>
-              <p className="font-size-18 mb-0">
+              <p className="font-size-18 mb-0" data-aos="fade-left">
                 1. Wide range of products available.
                 <br />
                 2. Diverse selection to suit preferences.
