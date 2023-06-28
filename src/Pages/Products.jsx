@@ -16,7 +16,7 @@ export default function CategoryPage() {
   return (
     <div className="container">
       <div className="my-5 text-center">
-        <h1>Products</h1>
+        <h1 className="brand-font">Products</h1>
       </div>
       <div className="row ">
         {products.map((val, key) => (

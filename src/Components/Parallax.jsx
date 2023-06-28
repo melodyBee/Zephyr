@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import Aboutus from "./AboutUs";
-import Categories from "./Categories";
+import image2 from "../assets/undraw_relaxing_at_home_re_mror.svg";
+import image3 from "../assets/20943993.jpg";
+import image4 from "../assets/undraw_growing_re_olpi.svg";
+import image5 from "../assets/undraw_for_review_eqxk.svg";
+import image6 from "../assets/undraw_safe_re_kiil.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 export default function Parallax() {
@@ -14,8 +18,10 @@ export default function Parallax() {
   return (
     <>
       <section className="parallax-container">
-        <h1 className="brand-font">Zephyr</h1>
-        <p className="brand-font">
+        <h1 className="brand-font" data-aos="fade-up">
+          Zephyr
+        </h1>
+        <p className="brand-font" data-aos="fade-up">
           Where your shopping desires meet limitless possibilities.
         </p>
       </section>
@@ -47,14 +53,18 @@ export default function Parallax() {
                 <br />
               </p>
             </div>
-            <div className="image imagecontainer-2 col-6 mr-3"></div>
+            <div className="image imagecontainer-2 col-6 mr-3">
+              <img className="col-12  mr-3" src={image2} alt="about us image" />
+            </div>
           </div>
         </div>
       </section>
       <section className="buffer">
         <div className="Outerportion py-5 container">
           <div className="row align-items-start">
-            <div className="image imagecontainer-3 col-6 mr-3"></div>
+            <div className="image imagecontainer-3 col-6 mr-3">
+              <img className="col-12  mr-3" src={image3} alt="about us image" />
+            </div>
             <div className="contents col-6">
               <h1 className="font-size-36 mb-4 brand-font" data-aos="fade-left">
                 Extensive Product Selection:
@@ -80,10 +90,13 @@ export default function Parallax() {
         <div className="Outerportion py-5 container">
           <div className="row align-items-start">
             <div className="contents col-6">
-              <h1 className="font-size-36 mb-4 brand-font">
+              <h1
+                className="font-size-36 mb-4 brand-font"
+                data-aos="fade-right"
+              >
                 Competitive Pricing:
               </h1>
-              <p className="font-size-18 mb-0">
+              <p className="font-size-18 mb-0" data-aos="fade-right">
                 1. Affordable prices, great value.
                 <br />
                 2. Discounts, deals, and promotional offers.
@@ -96,7 +109,9 @@ export default function Parallax() {
                 <br />
               </p>
             </div>
-            <div className="image imagecontainer-4 col-6 mr-3"></div>
+            <div className="image imagecontainer-4 col-6 mr-3">
+              <img className="col-12  mr-3" src={image4} alt="about us image" />
+            </div>
           </div>
         </div>
       </section>
@@ -105,10 +120,10 @@ export default function Parallax() {
           <div className="row align-items-start">
             <div className="image imagecontainer-5 col-6 mr-3"></div>
             <div className="contents col-6">
-              <h1 className="font-size-36 mb-4 brand-font">
+              <h1 className="font-size-36 mb-4 brand-font" data-aos="fade-left">
                 Customer Reviews and Ratings:
               </h1>
-              <p className="font-size-18 mb-0">
+              <p className="font-size-18 mb-0" data-aos="fade-left">
                 1. Insights from real customer experiences.
                 <br />
                 2. Authentic feedback for better decision-making.
@@ -120,7 +135,13 @@ export default function Parallax() {
                 5. Evaluate seller credibility and customer satisfaction.
               </p>
             </div>
-            <div className="image imagecontainer-5 col-6 mr-3"></div>
+            <div className="image imagecontainer-5 col-6 mr-3">
+              <img
+                className="col-11 mt-0 mr-3"
+                src={image5}
+                alt="about us image"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -128,10 +149,13 @@ export default function Parallax() {
         <div className="Outerportion py-5 container">
           <div className="row align-items-start">
             <div className="contents col-6">
-              <h1 className="font-size-36 mb-4 brand-font">
+              <h1
+                className="font-size-36 mb-4 brand-font"
+                data-aos="fade-right"
+              >
                 Secure and Convenient Payment Options:
               </h1>
-              <p className="font-size-18 mb-0">
+              <p className="font-size-18 mb-0" data-aos="fade-right">
                 1. Safe and encrypted online transactions.
                 <br />
                 2. Multiple payment methods to choose from.
@@ -143,7 +167,10 @@ export default function Parallax() {
                 5. Protection against fraud and unauthorized transactions.
               </p>
             </div>
-            <div className="image imagecontainer-6 col-6 mr-3"></div>
+            <div className="image imagecontainer-6 col-6 mr-3">
+              {" "}
+              <img className="col-12  mr-3" src={image6} alt="about us image" />
+            </div>
           </div>
         </div>
       </section>
