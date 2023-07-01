@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Aboutus from "./AboutUs";
 import image2 from "../assets/undraw_relaxing_at_home_re_mror.svg";
-import image3 from "../assets/20943993.jpg";
+import image3 from "../assets/undraw_shopping_bags_nif5.svg";
 import image4 from "../assets/undraw_growing_re_olpi.svg";
 import image5 from "../assets/undraw_for_review_eqxk.svg";
 import image6 from "../assets/undraw_safe_re_kiil.svg";
@@ -118,7 +118,14 @@ export default function Parallax() {
       <section className="buffer">
         <div className="Outerportion py-5 container">
           <div className="row align-items-start">
-            <div className="image imagecontainer-5 col-6 mr-3"></div>
+            <div className="image imagecontainer-5 col-6 mr-3">
+              <img
+                className="col-11 mt-0 mr-3"
+                src={image5}
+                alt="about us image"
+              />
+            </div>
+
             <div className="contents col-6">
               <h1 className="font-size-36 mb-4 brand-font" data-aos="fade-left">
                 Customer Reviews and Ratings:
@@ -134,13 +141,6 @@ export default function Parallax() {
                 <br />
                 5. Evaluate seller credibility and customer satisfaction.
               </p>
-            </div>
-            <div className="image imagecontainer-5 col-6 mr-3">
-              <img
-                className="col-11 mt-0 mr-3"
-                src={image5}
-                alt="about us image"
-              />
             </div>
           </div>
         </div>
