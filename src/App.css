@@ -76,3 +76,8 @@ height:auto;
 .contents{
   font-family: 'Roboto Condensed', sans-serif;
 }
+.image-container {
+  width: 20vh;
+  height: 20vh;
+  object-fit: cover;
+}

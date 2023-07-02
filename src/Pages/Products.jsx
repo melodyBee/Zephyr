@@ -23,7 +23,11 @@ export default function CategoryPage() {
           <div className="col-md-3 my-4" key={key}>
             <Link className="text-decoration-none" to={`/products/${val.id}`}>
               <Card>
-                <Card.Img variant="top" src={val.thumbnail} />
+                <Card.Img
+                  variant="top"
+                  className="img-fluid image-container"
+                  src={val.thumbnail}
+                />
                 <Card.Body>
                   <Card.Title>
                     {val.title} - {val.price}$

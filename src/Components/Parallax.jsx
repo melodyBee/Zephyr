@@ -10,9 +10,9 @@ import "aos/dist/aos.css";
 export default function Parallax() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
-      easing: "ease", // Animation easing
-      once: false, // Only animate elements once
+      duration: 1000,
+      easing: "ease",
+      once: false,
     });
   }, []);
   return (
