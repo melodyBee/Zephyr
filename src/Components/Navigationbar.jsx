@@ -14,9 +14,6 @@ function Navigationbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Link className="nav-link" to="/">
-              Home
-            </Link>
             <Link className="nav-link" to="/Categories">
               Categories
             </Link>

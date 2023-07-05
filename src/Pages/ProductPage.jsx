@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import ReactStars from "react-stars";
 import Swal from "sweetalert2";
@@ -60,7 +60,6 @@ export default function ProductPage() {
 
   return (
     <>
-      <div></div>
       <div className="container mt-5">
         <div className="row">
           <div className="col-6">
@@ -81,7 +80,7 @@ export default function ProductPage() {
             </Carousel>
           </div>
           <div className="col-6">
-            <h1>{product.title} -</h1>
+            <h1>{product.title}</h1>
             <h5>{product.price}$</h5>
             <p className="text-secondary">{product.description}</p>
             <ReactStars

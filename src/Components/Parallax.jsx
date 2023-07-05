@@ -27,11 +27,11 @@ export default function Parallax() {
       </section>
       <Aboutus />
       <section
-        className="d-flex justify-content-center"
+        className="d-flex justify-content-center "
         id="why?"
         data-aos="fade-up"
       >
-        <h1 className="brand-font">Why Zephyr is helpful?</h1>
+        <h1 className="brand-font ">Why Zephyr is helpful?</h1>
       </section>
       <section className="buffer">
         <div className="Outerportion py-5 container">
