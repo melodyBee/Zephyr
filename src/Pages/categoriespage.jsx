@@ -21,14 +21,21 @@ export default function categoriesPage() {
 
       <div className="row">
         {products.map((val, key) => (
-          <div className="col-md-6 my-4" key={key}>
+          <div className="col-md-3 my-4" key={key}>
             <Link className="text-decoration-none" to={`/products/${val.id}`}>
               <Card>
-                <Card.Img variant="top" src={val.thumbnail} />
+                <Card.Img
+                  variant="top"
+                  src={val.thumbnail}
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "20vh",
+                  }}
+                />
                 <Card.Body>
-                  <Card.Title>
-                    {val.title} - {val.price}$
-                  </Card.Title>
+                  <Card.Title>{val.title}</Card.Title>
+                  <div className="price">{val.price}$</div>
                   <Card.Text>{val.description}</Card.Text>
                 </Card.Body>
               </Card>

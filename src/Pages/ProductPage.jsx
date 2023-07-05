@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ReactStars from "react-stars";
 import Swal from "sweetalert2";
-import ImageSection from "../Components/ImageSection";
+import Carousel from "react-bootstrap/Carousel";
 
 export default function ProductPage() {
   const { productID } = useParams();
@@ -60,10 +60,25 @@ export default function ProductPage() {
 
   return (
     <>
+      <div></div>
       <div className="container mt-5">
         <div className="row">
           <div className="col-6">
-            <ImageSection images={product.images} />
+            <Carousel>
+              {product?.images?.map((val, key) => (
+                <Carousel.Item key={key}>
+                  <img
+                    src={val}
+                    alt={`Product Image ${key}`}
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "45vh",
+                    }}
+                  />
+                </Carousel.Item>
+              ))}
+            </Carousel>
           </div>
           <div className="col-6">
             <h1>{product.title} -</h1>
@@ -97,7 +112,7 @@ export default function ProductPage() {
           </div>
         </div>
         <div className="row">
-          <h2 className="">Reviews Us</h2>
+          <h2 className="brand-font">Reviews Us</h2>
           <div className="col-6">
             {" "}
             <div className="form-floating">
@@ -116,7 +131,6 @@ export default function ProductPage() {
             </button>
           </div>
           <div className="col-6">
-            {" "}
             <div className="d-flex align-items-center">
               <ReactStars
                 count={5}

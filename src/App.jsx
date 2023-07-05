@@ -9,9 +9,8 @@ import Page404 from "./Pages/Page404";
 import NavigationBar from "./Components/Navigationbar";
 import Footer from "./Components/Footer";
 import ProductPage from "./Pages/ProductPage";
-import Categories from "./Components/Categories"
-import AboutUs from "./Components/AboutUs";
-
+import Categories from "./Components/Categories";
+import Categoriespage from "./Pages/categoriespage";
 
 export default function App() {
   const [user, setUser] = useState(true);
@@ -26,7 +25,10 @@ export default function App() {
           <Route path="/products/:productID" element={<ProductPage />} />
           <Route path="*" element={<Page404 />} />
           <Route path="/Categories" element={<Categories />} />
-          
+          <Route
+            path="/products/category/:categoryName"
+            element={<Categoriespage />}
+          />
         </Routes>
       ) : (
         <Routes>

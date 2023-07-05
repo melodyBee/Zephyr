@@ -3,13 +3,10 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Categories from "./Categories";
-import { Button } from "react-bootstrap";
 
 function Navigationbar() {
   return (
-    <Navbar sticky="top" bg="dark" data-bs-theme="dark" expand="lg">
+    <Navbar bg="dark" data-bs-theme="dark" expand="lg">
       <Container>
         <Link className="brand-font navbar-brand" to="/">
           Zephyr

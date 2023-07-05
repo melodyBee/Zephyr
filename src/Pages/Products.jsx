@@ -27,8 +27,17 @@ export default function CategoryPage() {
                   variant="top"
                   className="img-fluid image-container"
                   src={val.thumbnail}
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "200px",
+                  }}
                 />
-                <Card.Body>
+                <Card.Body
+                  style={{
+                    height: "30vh",
+                  }}
+                >
                   <Card.Title>
                     {val.title} - {val.price}$
                   </Card.Title>
