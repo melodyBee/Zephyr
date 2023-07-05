@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import axios from "axios";
-
 export default function CategoryPage() {
   const { categoryName } = useParams();
   const [products, setProducts] = useState([]);
@@ -33,15 +33,19 @@ export default function CategoryPage() {
                     height: "200px",
                   }}
                 />
-                <Card.Body
-                  style={{
-                    height: "30vh",
-                  }}
-                >
+                <Card.Body style={{}}>
                   <Card.Title>
-                    {val.title} - {val.price}$
+                    {val.title.length > 20
+                      ? val.title.slice(0, 20) + "..."
+                      : val.title}
                   </Card.Title>
-                  <Card.Text>{val.description}</Card.Text>
+                  <span className="badge bg-secondary">{val.price}</span>
+                  <Card.Text>
+                    {val.description.length > 40
+                      ? val.description.slice(0, 40) + "..."
+                      : val.description}
+                  </Card.Text>
+                  <Button className="btn btn-dark ">Shop Now</Button>
                 </Card.Body>
               </Card>
             </Link>

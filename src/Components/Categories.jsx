@@ -14,7 +14,28 @@ export default function CategoriesSection() {
       .get("https://dummyjson.com/products/categories")
       .then((json) => setCategories(json.data));
   }, []);
-
+  const categoryImages = [
+    "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/6/thumbnail.png",
+    "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/16/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/21/thumbnail.png",
+    "https://i.dummyjson.com/data/products/26/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/35/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/40/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/45/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/50/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/55/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/60/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/65/thumbnail.webp",
+    "https://i.dummyjson.com/data/products/70/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/75/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/80/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/85/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/90/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/95/thumbnail.jpg",
+    "https://i.dummyjson.com/data/products/98/thumbnail.jpg",
+  ];
   useEffect(() => {
     AOS.init();
   }, []);
@@ -22,7 +43,7 @@ export default function CategoriesSection() {
   return (
     <>
       <div className="container-fluid">
-        <div className="row" data-aos="zoom-in">
+        <div className="row">
           {categories.map((category, index) => (
             <div className="col-md-3 my-3" key={index}>
               <Link
