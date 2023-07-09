@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import Carousel from "react-bootstrap/Carousel";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -42,8 +41,11 @@ export default function CategoriesSection() {
 
   return (
     <>
-      <div className="container-fluid">
-        <div className="row">
+      <div className="container">
+        <div className="my-5">
+          <h1 className="brand-font">Categories</h1>
+        </div>
+        <div className="bd row ">
           {categories.map((category, index) => (
             <div className="col-md-3 my-3" key={index}>
               <Link

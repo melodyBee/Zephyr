@@ -2,7 +2,7 @@
 .brand-font {
     font-family: 'Abril Fatface', cursive;
   }
-
+/* parallax scroll  */
 :root {
   --color: rgb(63 63 63);
 }
@@ -27,17 +27,14 @@ body {
 
   text-align: center;
 }
-#category-line{
-  background-color:  rgb(63 63 63);
-  min-height:12vh;
-}
 .parallax-container p{
   font-size:x-large;
 }
 .buffer {
   width: 100%;
   min-height: 60vh;
-  background-color: #ffff;
+  color: "white";
+  background-color: #272b30;
 }
 
 .parallax-container2 {
@@ -63,16 +60,6 @@ p {
 width:50%;
 height:auto;
 }
-.dropdown-menu {
-  min-width: 200px;
-}
-
-.dropdown-item {
-  padding: 0.25rem 1.5rem;
-}
-#categories-dropdown{
-  width:90%
-}
 .contents{
   font-family: 'Roboto Condensed', sans-serif;
 }
@@ -81,3 +68,19 @@ height:auto;
   height: 20vh;
   object-fit: cover;
 }
+/* Product carousel */
+Card{
+  display: flex;
+  flex-wrap:wrap;
+  width:300px;
+}
+.thumb{
+  flex: 1, 1, 200px;
+}
+.content{
+  flex:2, 1, 300px;
+}
+/* categories page */
+.bd{
+}
+

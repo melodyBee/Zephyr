@@ -3,7 +3,10 @@ import image from "../assets/aboutus.svg";
 export default function AboutUs() {
   return (
     <>
-      <section className="buffer">
+      <section
+        className="buffer"
+        style={{ color: "white", backgroundColor: "#272b30" }}
+      >
         <div className="Outerportion py-5 container">
           <div className="aboutus row align-items-start">
             <div className="img col-6 mr-3">

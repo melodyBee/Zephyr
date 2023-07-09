@@ -4,6 +4,7 @@ import axios from "axios";
 import ReactStars from "react-stars";
 import Swal from "sweetalert2";
 import Carousel from "react-bootstrap/Carousel";
+import Button from "react-bootstrap/Button";
 
 export default function ProductPage() {
   const { productID } = useParams();
@@ -11,6 +12,7 @@ export default function ProductPage() {
   const [review, setReview] = useState("");
   const [ratingstar, setratingStar] = useState(0);
   const [productQuantity, setproductQuantity] = useState(1);
+  const [favourite, setFavourite] = useState(false);
 
   const ratingChanged = (newRating) => {
     setratingStar(newRating);
@@ -42,6 +44,7 @@ export default function ProductPage() {
       totalPrice: product.price * productQuantity,
     };
 
+    setFavourite(!favourite);
     console.log(payload);
 
     Swal.fire({
@@ -55,7 +58,28 @@ export default function ProductPage() {
   useEffect(() => {
     axios
       .get(`https://dummyjson.com/products/${productID}`)
-      .then((json) => setproduct(json.data));
+      .then((json) => setproduct(json.data))
+      .catch((error) => {
+        setproduct({
+          id: 1,
+          title: "iPhone 9",
+          description: "An apple mobile which is nothing like apple",
+          price: 549,
+          discountPercentage: 12.96,
+          rating: 4.69,
+          stock: 94,
+          brand: "Apple",
+          category: "smartphones",
+          thumbnail: "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+          images: [
+            "https://i.dummyjson.com/data/products/1/1.jpg",
+            "https://i.dummyjson.com/data/products/1/2.jpg",
+            "https://i.dummyjson.com/data/products/1/3.jpg",
+            "https://i.dummyjson.com/data/products/1/4.jpg",
+            "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+          ],
+        });
+      });
   }, []);
 
   return (
@@ -70,7 +94,7 @@ export default function ProductPage() {
                     src={val}
                     alt={`Product Image ${key}`}
                     style={{
-                      objectFit: "cover",
+                      objectFit: "contain",
                       width: "100%",
                       height: "45vh",
                     }}
@@ -80,8 +104,10 @@ export default function ProductPage() {
             </Carousel>
           </div>
           <div className="col-6">
-            <h1>{product.title}</h1>
-            <h5>{product.price}$</h5>
+            <h1 className="brand-font">{product.title}</h1>
+            <h4>{product.price}$</h4>
+
+            <h6 className="text-secondary">Brand: {product.brand}</h6>
             <p className="text-secondary">{product.description}</p>
             <ReactStars
               className=""
@@ -91,23 +117,29 @@ export default function ProductPage() {
               value={product.rating}
               color2={"#ffd700"}
             />
-            <button
-              className="btn btn-dark mx-3"
+            <Button
+              className="btn mx-3"
+              variant="dark"
               disabled={productQuantity > 1 ? false : true}
               onClick={() => setproductQuantity(productQuantity - 1)}
             >
               -
-            </button>
+            </Button>
             {productQuantity}
-            <button
-              className="btn btn-dark mx-3"
+            <Button
+              className="btn mx-3"
+              variant="dark"
               onClick={() => setproductQuantity(productQuantity + 1)}
             >
               +
-            </button>
-            <button className="btn btn-dark" onClick={addToCart}>
+            </Button>
+            <Button
+              active={favourite}
+              variant="outline-dark"
+              onClick={addToCart}
+            >
               Add to Cart
-            </button>
+            </Button>
           </div>
         </div>
         <div className="row">
@@ -125,9 +157,9 @@ export default function ProductPage() {
               />
               <label htmlFor="floatingTextarea2">Comments</label>
             </div>
-            <button className="my-3 btn btn-dark" onClick={submitReview}>
+            <Button className="my-3 btn btn-dark" onClick={submitReview}>
               Submit review
-            </button>
+            </Button>
           </div>
           <div className="col-6">
             <div className="d-flex align-items-center">

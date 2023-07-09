@@ -11,6 +11,7 @@ import Footer from "./Components/Footer";
 import ProductPage from "./Pages/ProductPage";
 import Categories from "./Components/Categories";
 import Categoriespage from "./Pages/categoriespage";
+import Productscarousel from "./Components/Productscarousel";
 
 export default function App() {
   const [user, setUser] = useState(true);
