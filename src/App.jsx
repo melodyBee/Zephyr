@@ -13,7 +13,7 @@ import Categories from "./Components/Categories";
 import Categoriespage from "./Pages/categoriespage";
 
 export default function App() {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
   return (
     <>
       <NavigationBar />
