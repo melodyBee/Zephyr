@@ -39,7 +39,7 @@ export default function Parallax() {
         <section className="buffer">
           <div className="Outerportion py-5 container">
             <div className="row align-items-center">
-              <div className="contents col-6">
+              <div className="contents col-12 col-md-6">
                 <h1
                   className="font-size-36 mb-4 brand-font"
                   data-aos="fade-right"
@@ -56,7 +56,7 @@ export default function Parallax() {
                   <br />
                 </p>
               </div>
-              <div className="image imagecontainer-2 col-6 mr-3">
+              <div className="image imagecontainer-2 col-12 col-md-6 mr-3">
                 <img
                   className="col-12  mr-3"
                   src={image2}
@@ -76,7 +76,7 @@ export default function Parallax() {
                   alt="about us image"
                 />
               </div>
-              <div className="contents col-6">
+              <div className="contents col-12 col-md-6">
                 <h1
                   className="font-size-36 mb-4 brand-font"
                   data-aos="fade-left"
@@ -96,7 +96,7 @@ export default function Parallax() {
                   <br />
                 </p>
               </div>
-              <div className="image imagecontainer-3 col-6 mr-3"></div>
+              <div className="image imagecontainer-3 col-12 col-md-6 mr-3"></div>
             </div>
           </div>
         </section>
@@ -136,7 +136,7 @@ export default function Parallax() {
         <section className="buffer">
           <div className="Outerportion py-5 container">
             <div className="row align-items-start">
-              <div className="image imagecontainer-5 col-6 mr-3">
+              <div className="image imagecontainer-5 col-12 col-md-6 mr-3">
                 <img
                   className="col-11 mt-0 mr-3"
                   src={image5}
@@ -144,7 +144,7 @@ export default function Parallax() {
                 />
               </div>
 
-              <div className="contents col-6">
+              <div className="contents col-12 col-md-6">
                 <h1
                   className="font-size-36 mb-4 brand-font"
                   data-aos="fade-left"
@@ -169,7 +169,7 @@ export default function Parallax() {
         <section className="buffer">
           <div className="Outerportion py-5 container">
             <div className="row align-items-start">
-              <div className="contents col-6">
+              <div className="contents col-12 col-md-6">
                 <h1
                   className="font-size-36 mb-4 brand-font"
                   data-aos="fade-right"
@@ -188,7 +188,7 @@ export default function Parallax() {
                   5. Protection against fraud and unauthorized transactions.
                 </p>
               </div>
-              <div className="image imagecontainer-6 col-6 mr-3">
+              <div className="image imagecontainer-6 col-12 col-md-6 mr-3">
                 <img
                   className="col-12  mr-3"
                   src={image6}

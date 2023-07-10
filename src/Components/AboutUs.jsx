@@ -9,14 +9,14 @@ export default function AboutUs() {
       >
         <div className="Outerportion py-5 container">
           <div className="aboutus row align-items-start">
-            <div className="img col-6 mr-3">
+            <div className="img col-12 col-md-6 mr-3">
               <img
                 className="col-12 mt-5 mr-3"
                 src={image}
                 alt="about us image"
               />
             </div>
-            <div className="contents col-6">
+            <div className="contents col-12 col-md-6">
               <h1 className="font-size-36 mb-4 brand-font">About Us</h1>
               <p className="font-size-18 mb-0">
                 We are a team of passionate people dedicated to providing the

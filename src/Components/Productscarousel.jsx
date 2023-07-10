@@ -32,7 +32,7 @@ export default function Productscarousel() {
                   }}
                 >
                   <div className="row mt-5">
-                    <div className="col-6">
+                    <div className="col-12 col-md-6">
                       <Card.Img
                         variant="top"
                         className="thumb img-fluid image-container"
@@ -44,7 +44,7 @@ export default function Productscarousel() {
                         }}
                       />
                     </div>
-                    <div className="content col-6">
+                    <div className="content col-12 col-md-6">
                       <Card.Body>
                         <Card.Text>
                           <h1 className="brand-font" style={{ color: "white" }}>
