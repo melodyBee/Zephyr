@@ -65,9 +65,7 @@ export default function CategoriesSection() {
                   />
 
                   <Card.Body>
-                    <Card.Title>
-                      {category.toUpperCase().replace("-", " ")}
-                    </Card.Title>
+                    <Card.Title>{category}</Card.Title>
                   </Card.Body>
                 </Card>
               </Link>

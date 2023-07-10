@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import ReactStars from "react-stars";
@@ -7,11 +7,26 @@ import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 
 export default function ProductPage() {
+  const dataobj = {
+    counter: 0,
+  };
+  const call = (state, action) => {
+    switch (action.type) {
+      case "Increase":
+        return { ...state, counter: state.counter++ };
+        break;
+      case "Decrease":
+        return { ...state, counter: state.counter-- };
+        break;
+      default:
+        break;
+    }
+  };
+  const [state, dispatch] = useReducer(call, dataobj);
   const { productID } = useParams();
   const [product, setproduct] = useState({});
   const [review, setReview] = useState("");
   const [ratingstar, setratingStar] = useState(0);
-  const [productQuantity, setproductQuantity] = useState(1);
   const [favourite, setFavourite] = useState(false);
 
   const ratingChanged = (newRating) => {
@@ -59,7 +74,7 @@ export default function ProductPage() {
     axios
       .get(`https://dummyjson.com/products/${productID}`)
       .then((json) => setproduct(json.data))
-      .catch((error) => {
+      .catch((err) => {
         setproduct({
           id: 1,
           title: "iPhone 9",
@@ -120,16 +135,24 @@ export default function ProductPage() {
             <Button
               className="btn mx-3"
               variant="dark"
-              disabled={productQuantity > 1 ? false : true}
-              onClick={() => setproductQuantity(productQuantity - 1)}
+              disabled={state.counter > 1 ? false : true}
+              onClick={() =>
+                dispatch({
+                  type: "Decrease",
+                })
+              }
             >
               -
             </Button>
-            {productQuantity}
+            {state.counter}
             <Button
               className="btn mx-3"
               variant="dark"
-              onClick={() => setproductQuantity(productQuantity + 1)}
+              onClick={() =>
+                dispatch({
+                  type: "Increase",
+                })
+              }
             >
               +
             </Button>
@@ -145,7 +168,6 @@ export default function ProductPage() {
         <div className="row">
           <h2 className="brand-font">Reviews Us</h2>
           <div className="col-6">
-            {" "}
             <div className="form-floating">
               <textarea
                 className="form-control"

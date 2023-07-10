@@ -1,72 +1,84 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Swal from "sweetalert2";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    console.log("Email:", email);
-    console.log("Password:", password);
-  }, [email, password]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log("Submitted");
-
-    setEmail("");
-    setPassword("");
+  const dataobj = {
+    name: "",
+    password: "",
   };
 
+  const call = (state, action) => {
+    switch (action.type) {
+      case "NAME":
+        return { ...state, name: action.name };
+      case "PASSWORD":
+        return { ...state, password: action.password };
+      case "DATASUB":
+        return { ...state, password: action.password };
+      default:
+        break;
+    }
+  };
+  const [state, dispatch] = useReducer(call, dataobj);
+
   return (
-    <div className="login template d-flex justify-content-center align-items-center p-5">
-      <div className="p-5 rounded" style={{ width: "400px" }}>
-        <form onSubmit={handleSubmit}>
-          <h3 style={{ color: "#001A33" }}>LOGIN IN</h3>
-          <div className="mb-3">
-            <label htmlFor="email" style={{ color: "#001A33" }}>
-              Email
-            </label>
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="form-control"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="mb-2">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              placeholder="Your Password"
-              className="form-control"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div className="mb-2">
-            <input
-              type="checkbox"
-              className="custom-control custom-checkbox"
-              name=""
-              id="checkbox"
-            />
-            <label htmlFor="checkbox" className="custom-input-label">
-              Remember me
-            </label>
-          </div>
-          <div className="d-grid">
-            <button className="btn btn-dark" type="submit">
-              Sign In
-            </button>
-          </div>
-          <p>
-            Forgot <a href="">Password?</a> <br />
-          </p>
-        </form>
+    <>
+      <div className="login template d-flex justify-content-center align-items-center p-5">
+        <div className="p-5 rounded" style={{ width: "400px" }}>
+          <Form>
+            <h1 className="brand-font">Login</h1>
+            <div className="mb-3">
+              <Form.Group className="mb-3" controlId="formBasicText">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter Name"
+                  value={state.name}
+                  onChange={(e) =>
+                    dispatch({
+                      type: "NAME",
+                      name: e.target.value,
+                    })
+                  }
+                />
+              </Form.Group>
+            </div>
+
+            <div className="mb-3">
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Enter Password"
+                  value={state.password}
+                  onChange={(e) =>
+                    dispatch({
+                      type: "PASSWORD",
+                      password: e.target.value,
+                    })
+                  }
+                />
+              </Form.Group>
+            </div>
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Check type="checkbox" label="Remember me" />
+            </Form.Group>
+            <Button
+              variant="dark"
+              onClick={() =>
+                dispatch({
+                  type: "DATASUB",
+                })
+              }
+            >
+              Submit
+            </Button>
+          </Form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

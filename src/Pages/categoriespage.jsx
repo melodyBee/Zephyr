@@ -16,7 +16,7 @@ export default function categoriesPage() {
   return (
     <div className="container">
       <div className="my-5 text-center">
-        <h1>{categoryName.toUpperCase()}</h1>
+        <h1>{categoryName}</h1>
       </div>
 
       <div className="row">
@@ -34,9 +34,13 @@ export default function categoriesPage() {
                   }}
                 />
                 <Card.Body>
-                  <Card.Title>{val.title}</Card.Title>
+                  <Card.Title className="brand-font">{val.title}</Card.Title>
                   <div className="price">{val.price}$</div>
-                  <Card.Text>{val.description}</Card.Text>
+                  <Card.Text>
+                    {val.description.length > 20
+                      ? val.description.slice(0, 40) + "..."
+                      : val.description}
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </Link>

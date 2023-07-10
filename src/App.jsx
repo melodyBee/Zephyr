@@ -14,7 +14,7 @@ import Categoriespage from "./Pages/categoriespage";
 import Productscarousel from "./Components/Productscarousel";
 
 export default function App() {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
   return (
     <>
       <NavigationBar />
