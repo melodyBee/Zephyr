@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Home from "./Pages/Home";
 import Products from "./Pages/Products";
 import Login from "./Pages/Login";
-import Signup from "./Pages/Signup";
+import Signup from "./Pages/SignUp";
 import Page404 from "./Pages/Page404";
 import NavigationBar from "./Components/Navigationbar";
 import Footer from "./Components/Footer";
