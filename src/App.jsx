@@ -1,4 +1,4 @@
-import "./app.css";
+import "./newApp.css";
 import { Route, Routes, Navigate } from "react-router-dom";
 import React, { useState } from "react";
 import Home from "./Pages/Home";
