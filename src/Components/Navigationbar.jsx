@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -6,11 +6,13 @@ import Navbar from "react-bootstrap/Navbar";
 import { CgProfile } from "react-icons/cg";
 import { GlobalContext } from "../Context/SignUp/SignUpcontext";
 import { useEffect } from "react";
+import { useContext } from "react";
 function Navigationbar() {
   const { state, dispatch } = useContext(GlobalContext);
-  // useEffect(() => {
-  //   console.log("Context data", state);
-  // }, [state]);
+  useEffect(() => {
+    console.log("Contaxt data", state);
+  }, [state]);
+
   return (
     <Navbar bg="dark" data-bs-theme="dark" expand="lg">
       <Container>
@@ -34,7 +36,7 @@ function Navigationbar() {
             </Link>
             <Link className="nav-link">
               <CgProfile size={28} />
-              <span className="ms2">{state.user?.userName}</span>
+              <span className="ms2">User</span>
             </Link>
           </Nav>
         </Navbar.Collapse>

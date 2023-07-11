@@ -1,133 +1,151 @@
-import React, { useform_state, useEffect, useReducer } from "react";
+import React, { useform_state, useEffect, useReducer, useState } from "react";
 import { useContext } from "react";
 import { GlobalContext } from "../Context/SignUp/SignUpcontext";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import signupimg from "../assets/undraw_shopping_app_flsj.svg";
 
 function SignUp() {
-  const dataobj = {
-    name: "",
-    password: "",
-    email: "",
-    phoneNumber: "",
-  };
-
-  const call = (form_state, action) => {
+  const Call = (form_state, action) => {
     switch (action.type) {
-      case "NAME":
-        return { ...form_state, name: action.name };
-      case "EMAIL":
-        return { ...form_state, email: action.email };
-      case "PASSWORD":
-        return { ...form_state, password: action.password };
-      case "NUMBER":
-        return { ...form_state, phoneNumber: action.phoneNumber };
-
+      case "SET_USERNAME":
+        return { ...form_state, userName: action.userData.userName };
+      case "SET_EMAIL":
+        return { ...form_state, email: action.userData.email };
+      case "SET_PASSWORD":
+        return { ...form_state, password: action.userData.password };
+      case "SET_NUMBER":
+        return { ...form_state, number: action.userData.number };
       default:
-        break;
+        return form_state;
     }
   };
-  const [form_state, form_dispatch] = useReducer(call, dataobj);
-  const { state, dispatch } = useContext(GlobalContext);
+  // const onChange = (e) => {
+  //   formDispatch({
+  //     userData: {
+  //       email: e.target.value,
+  //     },
+  //   });
+  // };
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(form_state);
-
-    dispatch({
-      type: "SIGN_UP",
-      userData: form_state,
-    });
+    dispatch({ type: "SIGN_UP", userData: form_state });
   };
+  const dataobj = {
+    userName: "",
+    email: "",
+    password: "",
+    number: "",
+  };
+  const [form_state, formDispatch] = useReducer(Call, dataobj);
+  const { state, dispatch } = useContext(GlobalContext);
   return (
-    <div className="container ">
-      <div className="row">
-        <div className="col-12 col-md-4">
-          <div className="signup-form-wrapper">
-            <form className="p-5" onSubmit={handleSubmit}>
-              <h3 className="brand-font" style={{ color: "#001A33" }}>
-                SIGN UP
-              </h3>
-              <div className="mb-3">
-                <label htmlFor="name" style={{ color: "#001A33" }}>
-                  User Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Enter User Name"
-                  className="form-control"
-                  value={form_state.name}
-                  onChange={(e) =>
-                    form_dispatch({
-                      type: "NAME",
-                      name: e.target.value,
-                    })
-                  }
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="email" style={{ color: "#001A33" }}>
-                  Email
-                </label>
-                <input
-                  type="email"
-                  placeholder="Enter Email"
-                  className="form-control"
-                  value={form_state.email}
-                  onChange={(e) =>
-                    form_dispatch({
-                      type: "EMAIL",
-                      email: e.target.value,
-                    })
-                  }
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  placeholder="Enter Password"
-                  className="form-control"
-                  value={form_state.password}
-                  onChange={(e) =>
-                    form_dispatch({
-                      type: "PASSWORD",
-                      password: e.target.value,
-                    })
-                  }
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="phoneNumber">Phone Number</label>
-                <input
-                  type="tel"
-                  placeholder="Enter Phone Number"
-                  className="form-control"
-                  value={form_state.phoneNumber}
-                  onChange={(e) =>
-                    form_dispatch({
-                      type: "NUMBER",
-                      phoneNumber: e.target.value,
-                    })
-                  }
-                />
-              </div>
+    <>
+      <div className="m-md-5 p-md-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-md-4">
+              {" "}
+              <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicText">
+                  <Form.Label>User Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter User Name"
+                    value={form_state.userName}
+                    onChange={(e) =>
+                      formDispatch({
+                        type: "SET_USERNAME",
+                        userData: {
+                          userName: e.target.value,
+                        },
+                      })
+                    }
+                  />
+                  <Form.Text className="text-muted">
+                    {form_state.userName}
+                  </Form.Text>
+                </Form.Group>
 
-              <div>
-                <button className="btn btn-dark" type="submit">
-                  Sign Up
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div className="col-12 col-md-8 img img-fluid">
-          <div>
-            <img
-              src="https://cdni.iconscout.com/illustration/premium/thumb/ecommerce-website-3613833-3025953.png"
-              alt="Sign Up Illustration"
-            />
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="Enter email"
+                    value={form_state.email}
+                    onChange={(e) =>
+                      formDispatch({
+                        type: "SET_EMAIL",
+                        userData: {
+                          email: e.target.value,
+                        },
+                      })
+                    }
+                  />
+                  <Form.Text className="text-muted">
+                    We'll never share your email with anyone else.
+                    {form_state.email}
+                  </Form.Text>
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    placeholder="Enter Password"
+                    value={form_state.password}
+                    onChange={(e) =>
+                      formDispatch({
+                        type: "SET_PASSWORD",
+                        userData: {
+                          password: e.target.value,
+                        },
+                      })
+                    }
+                  />
+                  <Form.Text className="text-muted">
+                    {form_state.password}
+                  </Form.Text>
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
+                  <Form.Label>Phone Number</Form.Label>
+                  <Form.Control
+                    type="tel"
+                    placeholder="Enter number"
+                    value={form_state.number}
+                    onChange={(e) =>
+                      formDispatch({
+                        type: "SET_NUMBER",
+                        userData: {
+                          number: e.target.value,
+                        },
+                      })
+                    }
+                  />
+                  <Form.Text className="text-muted">
+                    {form_state.number}
+                  </Form.Text>
+                </Form.Group>
+
+                <Button variant="dark" type="submit">
+                  Submit
+                </Button>
+              </Form>
+            </div>
+            <div className="col-12 col-md-4  img img-fluid">
+              <img
+                className="img img-fluid image imagecontainer-2 col-12 col-md-6 mr-3"
+                style={{ width: "90vh" }}
+                src={signupimg}
+                alt="about us image"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

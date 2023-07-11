@@ -1,13 +1,16 @@
-import React from "react";
 import { useReducer } from "react";
 import { createContext } from "react";
+import React from "react";
 import { reducer } from "./SignUpreducer";
 export const GlobalContext = createContext("Initial Value");
 
-export default function LoginContextProvider({ children }) {
-  const data = { userName: undefined };
+export default function SignUpContextProvider({ children }) {
+  const data = {
+    user: undefined,
+  };
 
   const [state, dispatch] = useReducer(reducer, data);
+
   return (
     <GlobalContext.Provider value={{ state, dispatch }}>
       {children}

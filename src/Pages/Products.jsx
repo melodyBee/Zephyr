@@ -34,10 +34,8 @@ export default function CategoryPage() {
                   }}
                 />
                 <Card.Body style={{}}>
-                  <Card.Title>
-                    {val.title.length > 20
-                      ? val.title.slice(0, 20) + "..."
-                      : val.title}
+                  <Card.Title className="limithead brand-font">
+                    {val.title}
                   </Card.Title>
                   <span>
                     <h6>{val.price}$</h6>
