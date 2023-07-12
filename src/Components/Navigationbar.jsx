@@ -31,10 +31,10 @@ function Navigationbar() {
             <Link className="nav-link" to="/login">
               Login
             </Link>
-            <Link className="btn btn-light" to="SignUp">
+            <Link className="btn btn-light" to="/SignUp">
               SignUp
             </Link>
-            <Link className="nav-link">
+            <Link className="nav-link" to="/Profile">
               <CgProfile size={28} />
               <span className="ms2">User</span>
             </Link>

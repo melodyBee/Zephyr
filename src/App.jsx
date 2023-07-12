@@ -11,9 +11,10 @@ import Footer from "./Components/Footer";
 import ProductPage from "./Pages/ProductPage";
 import Categories from "./Components/Categories";
 import Categoriespage from "./Pages/Subcategories";
+import Profile from "./Components/Profile";
 
 export default function App() {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
   return (
     <>
       <NavigationBar />
@@ -25,6 +26,8 @@ export default function App() {
           <Route path="/products/:productID" element={<ProductPage />} />
           <Route path="*" element={<Page404 />} />
           <Route path="/Categories" element={<Categories />} />
+          <Route path="/Profile" element={<Profile />} />
+
           <Route
             path="/products/category/:categoryName"
             element={<Categoriespage />}
@@ -34,7 +37,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/Signup" element={<Signup />} />
           <Route path="*" element={<Navigate to="/login" replace={true} />} />
         </Routes>
       )}
