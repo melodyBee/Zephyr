@@ -4,7 +4,7 @@ import React from "react";
 import { reducer } from "./SignUpreducer";
 export const GlobalContext = createContext("Initial Value");
 
-export default function SignUpContextProvider({ children }) {
+export default function ContextProvider({ children }) {
   const data = {
     user: undefined,
   };

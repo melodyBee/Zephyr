@@ -15,7 +15,7 @@ export default function Parallax() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 200);
 
     AOS.init({
       duration: 1000,

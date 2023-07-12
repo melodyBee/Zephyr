@@ -27,6 +27,17 @@ body {
 
   text-align: center;
 }
+.Loader{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  row-gap: 1rem;
+  text-align: center;
+
+}
 .parallax-container p{
   font-size:x-large;
 }
