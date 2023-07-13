@@ -12,26 +12,27 @@ import ProductPage from "./Pages/ProductPage";
 import Categories from "./Components/Categories";
 import Categoriespage from "./Pages/Subcategories";
 import Profile from "./Components/Profile";
+import { useContext } from "react";
+import { GlobalContext } from "./Context/SignUp/SignUpcontext";
 
 export default function App() {
-  const [user, setUser] = useState(true);
+  const { state, dispatch } = useContext(GlobalContext);
   return (
     <>
       <NavigationBar />
 
-      {user ? (
+      {state.user ? (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:productID" element={<ProductPage />} />
-          <Route path="*" element={<Page404 />} />
           <Route path="/Categories" element={<Categories />} />
           <Route path="/Profile" element={<Profile />} />
-
           <Route
             path="/products/category/:categoryName"
             element={<Categoriespage />}
           />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       ) : (
         <Routes>

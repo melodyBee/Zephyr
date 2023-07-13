@@ -14,35 +14,52 @@ function Navigationbar() {
   }, [state]);
 
   return (
-    <Navbar bg="dark" data-bs-theme="dark" expand="lg">
-      <Container>
-        <Link className="brand-font navbar-brand" to="/">
-          Zephyr
-        </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Link className="nav-link" to="/Categories">
-              Categories
+    <>
+      {state.user ? (
+        <Navbar bg="dark" data-bs-theme="dark" expand="lg">
+          <Container>
+            <Link className="brand-font navbar-brand" to="/">
+              Zephyr
             </Link>
-            <Link className="nav-link" to="/Products">
-              Products
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ms-auto">
+                <Link className="nav-link" to="/Categories">
+                  Categories
+                </Link>
+                <Link className="nav-link" to="/Products">
+                  Products
+                </Link>
+
+                <Link className="nav-link" to="/Profile">
+                  <CgProfile size={28} />
+                  <span className="ms2">{state.user?.userName}</span>
+                </Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      ) : (
+        <Navbar bg="dark" data-bs-theme="dark" expand="lg">
+          <Container>
+            <Link className="brand-font navbar-brand" to="/">
+              Zephyr
             </Link>
-            <Link className="nav-link" to="/login">
-              Login
-            </Link>
-            <Link className="btn btn-light" to="/SignUp">
-              SignUp
-            </Link>
-            <Link className="nav-link" to="/Profile">
-              <CgProfile size={28} />
-              <span className="ms2">User</span>
-            </Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ms-auto">
+                <Link className="nav-link" to="/login">
+                  Login
+                </Link>
+                <Link className="btn btn-light" to="/SignUp">
+                  SignUp
+                </Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      )}
+    </>
   );
 }
-
 export default Navigationbar;

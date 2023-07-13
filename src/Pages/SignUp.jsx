@@ -20,26 +20,23 @@ function SignUp() {
         return form_state;
     }
   };
-  // const onChange = (e) => {
-  //   formDispatch({
-  //     userData: {
-  //       email: e.target.value,
-  //     },
-  //   });
-  // };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(form_state);
-    dispatch({ type: "SIGN_UP", userData: form_state });
-  };
+
   const dataobj = {
     userName: "",
     email: "",
     password: "",
     number: "",
   };
+
   const [form_state, formDispatch] = useReducer(Call, dataobj);
   const { state, dispatch } = useContext(GlobalContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(form_state);
+    dispatch({ type: "SIGN_UP", userData: form_state });
+  };
+
   return (
     <>
       <div className="m-md-5 p-md-5">
@@ -63,9 +60,6 @@ function SignUp() {
                       })
                     }
                   />
-                  <Form.Text className="text-muted">
-                    {form_state.userName}
-                  </Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -85,7 +79,6 @@ function SignUp() {
                   />
                   <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
-                    {form_state.email}
                   </Form.Text>
                 </Form.Group>
 
@@ -104,9 +97,6 @@ function SignUp() {
                       })
                     }
                   />
-                  <Form.Text className="text-muted">
-                    {form_state.password}
-                  </Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
@@ -124,9 +114,6 @@ function SignUp() {
                       })
                     }
                   />
-                  <Form.Text className="text-muted">
-                    {form_state.number}
-                  </Form.Text>
                 </Form.Group>
 
                 <Button variant="dark" type="submit">
