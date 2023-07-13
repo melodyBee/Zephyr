@@ -1,21 +1,16 @@
-import React, { useform_state, useEffect, useReducer, useState } from "react";
+import React, { useReducer } from "react";
 import { useContext } from "react";
 import { GlobalContext } from "../Context/SignUp/SignUpcontext";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import signupimg from "../assets/undraw_shopping_app_flsj.svg";
 
 function Login() {
   const Call = (form_state, action) => {
     switch (action.type) {
       case "SET_USERNAME":
         return { ...form_state, userName: action.userData.userName };
-      case "SET_EMAIL":
-        return { ...form_state, email: action.userData.email };
       case "SET_PASSWORD":
         return { ...form_state, password: action.userData.password };
-      case "SET_NUMBER":
-        return { ...form_state, number: action.userData.number };
       default:
         return form_state;
     }
@@ -23,9 +18,7 @@ function Login() {
 
   const dataobj = {
     userName: "",
-    email: "",
     password: "",
-    number: "",
   };
 
   const [form_state, formDispatch] = useReducer(Call, dataobj);

@@ -26,26 +26,36 @@ export default function CategoriesSection() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} className="me-2">
+      <Button variant="nav-link" onClick={handleShow} className="me-2">
         Categories
       </Button>
-      <Offcanvas show={show} onHide={handleClose} placement="top">
+      <Offcanvas
+        data-bs-theme="dark"
+        show={show}
+        onHide={handleClose}
+        placement="top"
+      >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Categories</Offcanvas.Title>
         </Offcanvas.Header>
-
-        <Offcanvas.Body>
-          {categories.map((category, index) => (
-            <Link
-              key={index}
-              className="catlink text-decoration-none"
-              to={`/products/category/${category}`}
-            >
-              {category}
-              <br />
-            </Link>
-          ))}
-        </Offcanvas.Body>
+        <div className="container">
+          <Offcanvas.Body>
+            <div className="row">
+              {categories.map((category, index) => (
+                <div className="col-md-3">
+                  <Link
+                    key={index}
+                    className="nav-link text-decoration-none"
+                    to={`/products/category/${category}`}
+                  >
+                    {category}
+                    <br />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </Offcanvas.Body>
+        </div>
       </Offcanvas>
     </>
   );

@@ -1,9 +1,8 @@
-import React, { useform_state, useEffect, useReducer, useState } from "react";
+import React, { useReducer } from "react";
 import { useContext } from "react";
 import { GlobalContext } from "../Context/SignUp/SignUpcontext";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import signupimg from "../assets/undraw_shopping_app_flsj.svg";
 
 function SignUp() {
   const Call = (form_state, action) => {
