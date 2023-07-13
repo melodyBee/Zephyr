@@ -7,6 +7,7 @@ import { CgProfile } from "react-icons/cg";
 import { GlobalContext } from "../Context/SignUp/SignUpcontext";
 import { useEffect } from "react";
 import { useContext } from "react";
+import CategoriesSection from "./Categories";
 function Navigationbar() {
   const { state, dispatch } = useContext(GlobalContext);
   useEffect(() => {
@@ -24,9 +25,7 @@ function Navigationbar() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
-                <Link className="nav-link" to="/Categories">
-                  Categories
-                </Link>
+                <CategoriesSection />
                 <Link className="nav-link" to="/Products">
                   Products
                 </Link>

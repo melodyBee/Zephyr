@@ -1,45 +1,61 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useform_state, useEffect, useReducer, useState } from "react";
+import { useContext } from "react";
+import { GlobalContext } from "../Context/SignUp/SignUpcontext";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import Swal from "sweetalert2";
+import signupimg from "../assets/undraw_shopping_app_flsj.svg";
 
 function Login() {
-  const dataobj = {
-    name: "",
-    password: "",
-  };
-
-  const call = (state, action) => {
+  const Call = (form_state, action) => {
     switch (action.type) {
-      case "NAME":
-        return { ...state, name: action.name };
-      case "PASSWORD":
-        return { ...state, password: action.password };
-      case "DATASUB":
-        return { ...state, password: action.password };
+      case "SET_USERNAME":
+        return { ...form_state, userName: action.userData.userName };
+      case "SET_EMAIL":
+        return { ...form_state, email: action.userData.email };
+      case "SET_PASSWORD":
+        return { ...form_state, password: action.userData.password };
+      case "SET_NUMBER":
+        return { ...form_state, number: action.userData.number };
       default:
-        break;
+        return form_state;
     }
   };
-  const [state, dispatch] = useReducer(call, dataobj);
+
+  const dataobj = {
+    userName: "",
+    email: "",
+    password: "",
+    number: "",
+  };
+
+  const [form_state, formDispatch] = useReducer(Call, dataobj);
+  const { state, dispatch } = useContext(GlobalContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(form_state);
+    dispatch({ type: "SIGN_UP", userData: form_state });
+  };
 
   return (
     <>
       <div className="login template d-flex justify-content-center align-items-center p-5">
         <div className="p-5 rounded" style={{ width: "400px" }}>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <h1 className="brand-font">Login</h1>
             <div className="mb-3">
               <Form.Group className="mb-3" controlId="formBasicText">
-                <Form.Label>Name</Form.Label>
+                <Form.Label>User Name</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter Name"
-                  value={state.name}
+                  placeholder="Enter User Name"
+                  value={form_state.userName}
                   onChange={(e) =>
-                    dispatch({
-                      type: "NAME",
-                      name: e.target.value,
+                    formDispatch({
+                      type: "SET_USERNAME",
+                      userData: {
+                        userName: e.target.value,
+                      },
                     })
                   }
                 />
@@ -52,29 +68,24 @@ function Login() {
                 <Form.Control
                   type="password"
                   placeholder="Enter Password"
-                  value={state.password}
+                  value={form_state.password}
                   onChange={(e) =>
-                    dispatch({
-                      type: "PASSWORD",
-                      password: e.target.value,
+                    formDispatch({
+                      type: "SET_PASSWORD",
+                      userData: {
+                        password: e.target.value,
+                      },
                     })
                   }
                 />
               </Form.Group>
             </div>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Remember me" />
-            </Form.Group>
-            <Button
-              variant="dark"
-              onClick={() =>
-                dispatch({
-                  type: "DATASUB",
-                })
-              }
-            >
-              Submit
-            </Button>
+
+            <div className="mb-3">
+              <Button variant="dark" type="submit">
+                Submit
+              </Button>
+            </div>
           </Form>
         </div>
       </div>

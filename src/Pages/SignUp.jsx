@@ -39,97 +39,91 @@ function SignUp() {
 
   return (
     <>
-      <div className="m-md-5 p-md-5">
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-md-4">
-              {" "}
-              <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicText">
-                  <Form.Label>User Name</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter User Name"
-                    value={form_state.userName}
-                    onChange={(e) =>
-                      formDispatch({
-                        type: "SET_USERNAME",
-                        userData: {
-                          userName: e.target.value,
-                        },
-                      })
-                    }
-                  />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Email address</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Enter email"
-                    value={form_state.email}
-                    onChange={(e) =>
-                      formDispatch({
-                        type: "SET_EMAIL",
-                        userData: {
-                          email: e.target.value,
-                        },
-                      })
-                    }
-                  />
-                  <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                  </Form.Text>
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="Enter Password"
-                    value={form_state.password}
-                    onChange={(e) =>
-                      formDispatch({
-                        type: "SET_PASSWORD",
-                        userData: {
-                          password: e.target.value,
-                        },
-                      })
-                    }
-                  />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
-                  <Form.Label>Phone Number</Form.Label>
-                  <Form.Control
-                    type="tel"
-                    placeholder="Enter number"
-                    value={form_state.number}
-                    onChange={(e) =>
-                      formDispatch({
-                        type: "SET_NUMBER",
-                        userData: {
-                          number: e.target.value,
-                        },
-                      })
-                    }
-                  />
-                </Form.Group>
-
-                <Button variant="dark" type="submit">
-                  Submit
-                </Button>
-              </Form>
+      <div className="login template d-flex justify-content-center align-items-center p-5">
+        <div className="p-5 rounded" style={{ width: "400px" }}>
+          <Form onSubmit={handleSubmit}>
+            <h1 className="brand-font">SignUp</h1>
+            <div className="mb-3">
+              <Form.Group className="mb-3" controlId="formBasicText">
+                <Form.Label>User Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter User Name"
+                  value={form_state.userName}
+                  onChange={(e) =>
+                    formDispatch({
+                      type: "SET_USERNAME",
+                      userData: {
+                        userName: e.target.value,
+                      },
+                    })
+                  }
+                />
+              </Form.Group>
             </div>
-            <div className="col-12 col-md-4  img img-fluid">
-              <img
-                className="img img-fluid image imagecontainer-2 col-12 col-md-6 mr-3"
-                style={{ width: "90vh" }}
-                src={signupimg}
-                alt="about us image"
-              />
+            <div className="mb-3">
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  value={form_state.email}
+                  onChange={(e) =>
+                    formDispatch({
+                      type: "SET_EMAIL",
+                      userData: {
+                        email: e.target.value,
+                      },
+                    })
+                  }
+                />
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
             </div>
-          </div>
+            <div className="mb-3">
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Enter Password"
+                  value={form_state.password}
+                  onChange={(e) =>
+                    formDispatch({
+                      type: "SET_PASSWORD",
+                      userData: {
+                        password: e.target.value,
+                      },
+                    })
+                  }
+                />
+              </Form.Group>
+            </div>
+            <div className="mb-3">
+              <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
+                <Form.Label>Phone Number</Form.Label>
+                <Form.Control
+                  type="tel"
+                  placeholder="Enter number"
+                  value={form_state.number}
+                  onChange={(e) =>
+                    formDispatch({
+                      type: "SET_NUMBER",
+                      userData: {
+                        number: e.target.value,
+                      },
+                    })
+                  }
+                />
+              </Form.Group>
+            </div>
+            <div className="mb-3">
+              <Button variant="dark" type="submit">
+                Submit
+              </Button>
+            </div>
+          </Form>
         </div>
       </div>
     </>
