@@ -58,8 +58,6 @@ export default function ProductPage() {
       productQuantity,
       totalPrice: product.price * productQuantity,
     };
-
-    setFavourite(!favourite);
     console.log(payload);
 
     Swal.fire({
@@ -156,7 +154,7 @@ export default function ProductPage() {
             >
               +
             </Button>
-            <Button
+            <Button className="d-block"
               active={favourite}
               variant="outline-dark"
               onClick={addToCart}
