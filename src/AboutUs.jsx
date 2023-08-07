@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../assets/aboutus.svg";
+import image from "./assets/aboutus.svg";
 export default function AboutUs() {
   return (
     <>

@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { CgProfile } from "react-icons/cg";
 import { GlobalContext } from "../Context/SignUp/SignUpcontext";
-import { useEffect } from "react";
 import { useContext } from "react";
-import CategoriesSection from "./Categories";
+import axios from "axios";
+import Offcanvas from "react-bootstrap/Offcanvas";
+// import Cart from "./Cart";
 function Navigationbar() {
+  const [categories, setCategories] = useState([]);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("https://dummyjson.com/products/categories")
+      .then((json) => setCategories(json.data));
+  }, []);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const { state, dispatch } = useContext(GlobalContext);
   useEffect(() => {
     console.log("Contaxt data", state);
@@ -25,13 +37,45 @@ function Navigationbar() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
-                <CategoriesSection />
+                <Link className="nav-link" onClick={handleShow}>
+                  Categories
+                </Link>
+                <Offcanvas
+                  data-bs-theme="dark"
+                  show={show}
+                  onHide={handleClose}
+                  placement="top"
+                >
+                  <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>Categories</Offcanvas.Title>
+                  </Offcanvas.Header>
+                  <div className="container">
+                    <Offcanvas.Body>
+                      <div className="row">
+                        {categories.map((category, index) => (
+                          <div>
+                            <Link
+                              key={index}
+                              className="nav-link text-decoration-none"
+                              to={`/products/category/${category}`}
+                            >
+                              {category}
+                              <br />
+                            </Link>
+                          </div>
+                        ))}
+                      </div>
+                    </Offcanvas.Body>
+                  </div>
+                </Offcanvas>
                 <Link className="nav-link" to="/Products">
                   Products
                 </Link>
-
+                {/* <Link className="nav-link" to="">
+                  <Cart />
+                </Link> */}
                 <Link className="nav-link" to="/Profile">
-                  <CgProfile size={28} />
+                  <CgProfile size={25} />
                   <span className="ms2">{state.user?.userName}</span>
                 </Link>
               </Nav>

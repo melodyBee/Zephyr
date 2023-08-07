@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Aboutus from "./AboutUs";
-import image2 from "../assets/undraw_relaxing_at_home_re_mror.svg";
-import image3 from "../assets/undraw_shopping_bags_nif5.svg";
-import image4 from "../assets/undraw_growing_re_olpi.svg";
-import image5 from "../assets/undraw_for_review_eqxk.svg";
-import image6 from "../assets/undraw_safe_re_kiil.svg";
+import image2 from "./assets/undraw_relaxing_at_home_re_mror.svg";
+import image3 from "./assets/undraw_shopping_bags_nif5.svg";
+import image4 from "./assets/undraw_growing_re_olpi.svg";
+import image5 from "./assets/undraw_for_review_eqxk.svg";
+import image6 from "./assets/undraw_safe_re_kiil.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Productscarousel from "./Productscarousel";
-import Loader from "./loader";
+import Productscarousel from "./Users/Components/Productscarousel";
+import Loader from "./Users/Components/loader";
 
 export default function Parallax() {
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
@@ -23,6 +24,7 @@ export default function Parallax() {
       once: false,
     });
   }, []);
+
   return (
     <>
       {isLoading ? (
@@ -37,14 +39,15 @@ export default function Parallax() {
               Where your shopping desires meet limitless possibilities.
             </p>
           </section>
+
           <Productscarousel />
           <Aboutus />
           <section
-            className="d-flex justify-content-center "
+            className="d-flex justify-content-center"
             id="why?"
             data-aos="fade-up"
           >
-            <h1 className="brand-font ">Why Zephyr is helpful?</h1>
+            <h1 className="brand-font">Why Zephyr is helpful?</h1>
           </section>
           <section className="buffer">
             <div className="Outerportion py-5 container">
@@ -58,11 +61,10 @@ export default function Parallax() {
                   </h1>
                   <p className="font-size-18 mb-0" data-aos="fade-right">
                     1. Shop anytime, anywhere, 24/7. <br />
-                    2. Hassle-free online shopping experience.
-                    <br />
+                    2. Hassle-free online shopping experience. <br />
                     3. No need to visit physical stores. <br />
-                    4.Time-saving and convenient browsing. <br />
-                    5. Flexibility to shop at own.
+                    4. Time-saving and convenient browsing. <br />
+                    5. Flexibility to shop at your own pace.
                     <br />
                   </p>
                 </div>
