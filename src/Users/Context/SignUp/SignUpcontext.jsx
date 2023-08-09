@@ -1,11 +1,13 @@
 import React, { createContext, useReducer, useEffect } from "react";
 import { reducer } from "./SignUpreducer";
+import { redirect } from "react-router-dom";
 
 const getUserData = () => {
   let userData = localStorage.getItem("user");
-  if (userData === "undefined") {
-    // Compare with the string "undefined"
-    return {};
+  console.log(userData);
+  if (!userData) {
+    // we need
+    return userData;
   } else {
     return JSON.parse(userData);
   }

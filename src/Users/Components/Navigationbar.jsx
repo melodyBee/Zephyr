@@ -40,22 +40,16 @@ function Navigationbar() {
                 <Link className="nav-link" onClick={handleShow}>
                   Categories
                 </Link>
-                <Offcanvas
-                  data-bs-theme="dark"
-                  show={show}
-                  onHide={handleClose}
-                  placement="top"
-                >
+                <Offcanvas show={show} onHide={handleClose} placement="top">
                   <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Categories</Offcanvas.Title>
                   </Offcanvas.Header>
-                  <div className="container">
-                    <Offcanvas.Body>
+                  <Offcanvas.Body>
+                    <div className="container">
                       <div className="row">
                         {categories.map((category, index) => (
-                          <div>
+                          <div key={index}>
                             <Link
-                              key={index}
                               className="nav-link text-decoration-none"
                               to={`/products/category/${category}`}
                             >
@@ -65,8 +59,8 @@ function Navigationbar() {
                           </div>
                         ))}
                       </div>
-                    </Offcanvas.Body>
-                  </div>
+                    </div>
+                  </Offcanvas.Body>
                 </Offcanvas>
                 <Link className="nav-link" to="/Products">
                   Products

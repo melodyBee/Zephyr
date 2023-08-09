@@ -19,8 +19,8 @@ export default function Productscarousel() {
   return (
     <div className="container mt-5">
       <Carousel interval={null} indicators={false}>
-        {products.map((val, key) => (
-          <Carousel.Item key={key}>
+        {products.map((val, index) => (
+          <Carousel.Item key={index}>
             <div
               className="container"
               style={{ color: "white", backgroundColor: "#272b30" }}
@@ -46,7 +46,7 @@ export default function Productscarousel() {
                         }}
                       />
                     </div>
-                    <div className="content col-12 col-md-6">
+                    <div className="col-12 col-md-6">
                       <Card.Body>
                         <Card.Text>
                           <h1 className="brand-font" style={{ color: "white" }}>
