@@ -1,10 +1,28 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import { CgProfile } from "react-icons/cg";
-import { GlobalContext } from "../Context/SignUp/SignUpcontext";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navigationbar from "./Components/Navigationbar";
+import Home from "./Pages/Home"; 
+import Products from "./Pages/Products";
+import Profile from "./Pages/Profile";
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
+
+function App() {
+  return (
+    <Router>
+      <Navigationbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Products" element={<Products />} />
+        <Route path="/Profile" element={<Profile />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/SignUp" element={<SignUp />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
 
 function Navigationbar() {
   const { state } = useContext(GlobalContext);
