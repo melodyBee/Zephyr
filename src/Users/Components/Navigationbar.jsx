@@ -37,10 +37,10 @@ function Navigationbar() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
-                <Link className="nav-link" onClick={handleShow}>
+{/*                 <Link className="nav-link" onClick={handleShow}>
                   Categories
-                </Link>
-                <Offcanvas show={show} onHide={handleClose} placement="top">
+                </Link> */}
+{/*                 <Offcanvas show={show} onHide={handleClose} placement="top">
                   <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Categories</Offcanvas.Title>
                   </Offcanvas.Header>
@@ -61,7 +61,7 @@ function Navigationbar() {
                       </div>
                     </div>
                   </Offcanvas.Body>
-                </Offcanvas>
+                </Offcanvas> */}
                 <Link className="nav-link" to="/Products">
                   Products
                 </Link>
